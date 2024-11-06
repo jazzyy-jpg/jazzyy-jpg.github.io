@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html> 
+   <head>
+    <title>This is the Title</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        
+        body {
+            background-color: #b6988c;
+        }
+
+        .container {
+            position: absolute;
+            width: 798px;
+            z-index: -2;
+            left: 25%;
+        }
+
+        div {
+            width: 33%;
+            background: white;
+        }
+
+        img {
+            height: 400px;
+            width: 400px;
+            object-fit: cover;
+            border-radius: 50%;
+            position: absolute;
+            top: 39px;
+            left: 200px;
+            z-index: 2;
+        }
+
+        .content {
+            width: inherit;
+            height: 760px;
+            background-color: #a52a2a;
+            border-radius: 41px 41px 8px 8px;
+            color: #2e0808;
+            position: absolute;
+            top: 300px;
+            z-index: 0;
+        }
+
+        .container > nav {
+            background-color: #a52a2a;
+            color: #794343;
+            position: absolute;
+            top: 500px;
+            left: 100px;
+            z-index: 1;
+        }
+
+        a button {
+            background-color: #b6988c;
+            height: 87px;
+            width: 183px;
+            border-radius: 25px;
+            border: none;
+            color: #160505;
+            font-family: "Poppins";
+            font-size: 26px;
+            font-weight: 400;
+            text-transform: capitalize;
+            margin: 0 10px;
+        }
+
+        button:hover {
+            background-color: #a52a2a;
+            color: #fcf0eb;
+            border: 2px solid #b6988c;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        #portfolio {
+            background-color: #a52a2a;
+            color: #fcf0eb;
+            font-family: "Poppins";
+            font-size: 50px;
+            font-weight: 400;
+            position: absolute;
+            top: 350px;
+            left: 250px;
+        }
+
+        #about > #sectionHeadings {
+            background-color: #a52a2a;
+            color: #fcf0eb;
+            font-family: "Poppins";
+            font-size: 30px;
+            font-weight: 400;
+            
+        }
+
+        #about {
+            font-family: "Arial";
+            color: #f0c6b5;
+            position: absolute;
+            top: 400px;
+            left: 100px;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <section class="container">
+
+        <img src="./Parable of the Sower.jpg" id="Parable-picture" alt="A picture of my fav book">
+
+
+        <nav id="navigation">
+
+            <a href="#about"><button>About</button></a>
+            <a href="#why"><button>Why</button></a>
+            <a href="#contact"><button>Contact</button></a>
+
+        </nav>
+
+        <section class="content">
+
+            <header id="portfolio">My Portfolio</header>
+            <section id="about">
+                <p id="sectionHeadings">Hi I'm Yasmeen and its nice to meet you! ^____^</p>
+      
+
+            </section>
+
+            <section id="why">
+
+            </section>
+
+            <section id="contact">
+
+            </section>
+        </section>
+    </section>
+</body>
+</html>
