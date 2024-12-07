@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, inital scale=1.0">
+    <script src="scriptforfinal.js"></script>
+
+    <title>Yasmeen's Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        /* Smooth scrolling behavior
+   Reference: W3Schools - CSS Smooth Scroll
+   https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section1 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            font-size: 18px;
+        }
+
+        body {
+            background-color: #ccb3bf;
+        }
+
+        .nav-mobile {
+            display: none;
+        }
+
+        .container {
+            position: absolute;
+            width: 798px;
+            z-index: -2;
+            left: 300px;
+        }
+
+        div {
+            width: 33%;
+            background: white;
+        }
+
+        img {
+            height: 340px;
+            width: 340px;
+            object-fit: cover;
+            border-radius: 50%;
+            position: absolute;
+            top: 120px;
+            left: 225px;
+            z-index: 2;
+        }
+
+        .content {
+            width: inherit;
+            height: 900px;
+            background-color: #8d6f7d;
+            border-radius: 41px;
+            color: #2e0808;
+            position: absolute;
+            top: 300px;
+            z-index: 0;
+        }
+
+        nav {
+            background-color: #fae7f0;
+            color: #160505;
+            position: absolute;
+            top: -30px;
+            left: 400px;
+            transform: translateX(-50%);
+            z-index: 1;
+            text-align: center;
+            width: 1000px;
+            height: 105px;
+            padding: 2px;
+            border-radius: 30px;
+        }
+
+        /* Button fade effect on hover
+   Reference: W3Schools - CSS Buttons Fade
+   https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_fade1 */
+        a button {
+            background-color: #ccb3bf;
+            height: 70px;
+            width: 150px;
+            border-radius: 12px;
+            border: none;
+            color: #160505;
+            font-family: "Poppins";
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-transform: capitalize;
+            margin: 28px 45px;
+            vertical-align: middle;
+            padding: 0 10px;
+            opacity: 0.6;
+            /* This makes the buttons slightly transparent */
+            transition: 0.3s;
+            /* This makes the fade smooth */
+        }
+
+        button:hover {
+            background-color: #ccb3bf;
+            color: #160505;
+            border: 2px solid #ceb5c2;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            opacity: 1;
+            /* This makes the button fully opaque on hover */
+        }
+
+        #portfolio {
+            background-color: #8d6f7d;
+            color: #fae7f0;
+            font-family: "Poppins";
+            font-size: 4rem;
+            font-weight: 400;
+            position: absolute;
+            top: 200px;
+            left: 120px;
+        }
+
+        #jobTitle {
+            background-color: #8d6f7d;
+            color: #cbbcc3;
+            font-family: "Poppins";
+            font-size: 2rem;
+            font-weight: 400;
+            position: absolute;
+            top: 290px;
+            left: 225px;
+            text-align: center;
+
+        }
+
+        #viewWorkButton {
+            background-color: #b8a5ad;
+            height: 200px;
+            width: 350px;
+            border-radius: 25px;
+            border: none;
+            color: #42251e;
+            font-family: "Poppins";
+            font-size: 2.7rem;
+            font-weight: 400;
+            position: absolute;
+            top: 550px;
+            left: 170px;
+            padding: 0 10px;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+
+        }
+
+        #viewWorkButton:hover {
+            background-color: #b8a5ad;
+            color: #42251e;
+            letter-spacing: none;
+            font-weight: 500;
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px #00000031;
+        }
+
+        #about {
+            font-family: "Arial";
+            color: #f0c6b5;
+            position: absolute;
+            top: 400px;
+            left: 100px;
+        }
+
+        #about {
+            top: 1100px;
+            background-color: #b290a0;
+            border-radius: 41px;
+            padding: 40px;
+            height: 240px;
+            width: 750px;
+            left: -10px;
+        }
+
+        #about h1 {
+            font-family: "Poppins";
+            color: #42251e;
+            background-color: #ccb3bf;
+            font-size: 2.5rem;
+            position: absolute;
+            top: -150px;
+            width: 100%;
+            left: 0;
+            font-weight: 400;
+        }
+
+        #about p {
+            font-family: "Poppins";
+            color: #594844;
+            background-color: #b290a0;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            text-align: center;
+            padding: 1px;
+            margin: 0 auto;
+            width: 750px;
+            left: -30px;
+        }
+
+        #work {
+            top: 1600px;
+            background-color: #b693a3;
+            border-radius: 41px;
+            padding: 40px;
+            width: 750px;
+            left: -10px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        #work h1 {
+            font-family: "Poppins";
+            color: #42251e;
+            background-color: #ccb3bf;
+            font-size: 2.5rem;
+            position: absolute;
+            top: -150px;
+            width: 100%;
+            left: 0;
+            font-weight: 400;
+        }
+
+        /* Button hover animation with transform and shadow
+   Reference: CodePen by codev_land
+   https://codepen.io/codev_land/pen/yLXeyWX */
+        #workDiv1,
+        #workDiv2,
+        #workDiv3 {
+            display: none;
+            background-color: #8d6f7d;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 20px;
+            color: #42251e;
+            font-family: "Poppins";
+            width: 100%;
+            text-align: center;
+        }
+
+        #workButton1,
+        #workButton2,
+        #workButton3 {
+            position: relative;
+            z-index: 2;
+            width: 150px;
+            padding: 15px;
+            background-color: #917381;
+            color: #42251e;
+            border: 0px;
+            font-family: "Poppins";
+            border-radius: 20px;
+            display: inline-block;
+            margin: 0 10px 20px 10px;
+            transition: 0.5s ease-in-out;
+        }
+
+
+        #workButton1:hover,
+        #workButton2:hover,
+        #workButton3:hover {
+            transform: translateY(-10px);
+            background-color: #8d6f7d;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #workDiv1 h2,
+        #workDiv2 h2,
+        #workDiv3 h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-family: "Poppins";
+        }
+
+        #workButton:hover {
+
+            background-color: #8d6f7d;
+            color: #42251e;
+            border: #7a606c;
+            border-radius: 20px;
+            letter-spacing: 0px;
+            padding: 15px;
+        }
+
+        #workDiv1 img,
+        #workDiv2 img,
+        #workDiv3 img {
+            position: static;
+            border-radius: 10px;
+            width: 90%;
+            max-height: 500px;
+            object-fit: contain;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .profile-image {
+            height: 500px;
+            width: 500px;
+            object-fit: cover;
+            position: absolute;
+            top: 2500px;
+            left: 370px;
+            z-index: 3;
+            border-radius: 0px;
+        }
+
+        .arrow-image {
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+            position: absolute;
+            top: 2688px;
+            left: 350px;
+            z-index: 1;
+            border-radius: 0px;
+            transform: rotate(45deg)
+        }
+
+
+        #contact {
+            top: 3000px;
+            background-color: #b693a3;
+            border-radius: 41px;
+            padding: 40px;
+            width: 750px;
+            left: -10px;
+            position: absolute;
+            height: auto;
+        }
+
+        #contact h1 {
+            font-family: "Poppins";
+            color: #42251e;
+            background-color: #ccb3bf;
+            font-size: 2.5rem;
+            position: absolute;
+            top: -150px;
+            width: 100%;
+            left: 0;
+            font-weight: 400;
+        }
+
+        #contact-form {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        #contact-form button {
+            background-color: #42251e;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 20px;
+            color: #fcf0eb;
+            font-family: "Poppins";
+            font-size: 1.2rem;
+            cursor: pointer;
+            align-self: center;
+            width: 200px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+        }
+
+        #contact-form button:hover {
+            background-color: #42251e;
+            color: #fcf0eb;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px #00000036;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav-mobile">
+        <a href="#home"><button>Home</button></a>
+        <a href="#about"><button>About Me</button></a>
+        <a href="#work"><button>My Work</button></a>
+        <a href="#contact"><button>Contact Me</button></a>
+    </div>
+
+    <section class="container">
+        <img src="./jasmeen.jpg" id="jasmeen-picture" alt="Meee">
+
+        <nav id="navigation">
+            <a href="#home"><button>Home</button></a>
+            <a href="#about"><button>About Me</button></a>
+            <a href="#work"><button>My Work</button></a>
+            <a href="#contact"><button>Contact Me</button></a>
+        </nav>
+        <section class="content" id="home">
+            <header id="portfolio">Hi, I'm Yasmeen</header>
+
+        </section>
+        <section class="content">
+            <header id="portfolio">Hi, I'm Yasmeen</header>
+
+            <p id="jobTitle">Marketing & Project <br> Manager</p>
+
+            <a href="#work"><button id="viewWorkButton">View My Work</button></a>
+
+            <section id="about">
+                <div>
+                    <h1>About Me</h1>
+                    <p>As a marketing & project management professional based in Bermuda, I blend creative content
+                        strategy with organized execution while encouraging
+                        meaningful client relationships. Outside of crafting campaigns and
+                        coordinating teams, I find joy in painting and escaping into science fiction novels :D</p>
+                </div>
+            </section>
+
+            <section id="work">
+
+                <h1>My Work</h1>
+
+                <button id="workButton1" onclick="accordion(this, document.getElementById('workDiv1'))">Social
+                    Media</button>
+
+                <div id="workDiv1">
+                    <h2>Social Media Management</h2>
+                    <img src="content.jpg" alt="Social Media Projects">
+                    <p>Led social media strategies across multiple platforms, increasing engagement by 50%. Created
+                        content calendars and managed campaigns for Instagram, LinkedIn, and Twitter.</p>
+                </div>
+
+                <button id="workButton2"
+                    onclick="accordion(this, document.getElementById('workDiv2'))">Marketing</button>
+                <div id="workDiv2">
+                    <h3>Marketing Strategy</h3>
+                    <img src="poster.png" alt="Marketing Campaign Projects">
+                    <p>Developed and executed comprehensive marketing strategies that increased brand visibility by 60%.
+                        Managed multi-channel campaigns across digital and traditional platforms, while maintaining
+                        brand consistency and measuring ROI through data-driven analytics.</p>
+                </div>
+
+                <button id="workButton3" onclick="accordion(this, document.getElementById('workDiv3'))">Design</button>
+                <div id="workDiv3">
+                    <h4>Brand Design</h4>
+                    <img src="postcard.png" alt="Design Portfolio Projects">
+                    <p>Created cohesive brand identities and visual assets that resonated with target audiences.
+                        Designed marketing posters, digital content, and presentation materials that enhanced brand
+                        messaging while maintaining a consistent visual language across all platforms.</p>
+                </div>
+
+            </section>
+
+            <img src="picofme.png" class="profile-image" alt="Profile picture">
+            <img src="carrow.png" class="arrow-image" alt="Arrow picture">
+
+
+            <section id="contact">
+                <h1>Contact Me</h1>
+                <form id="contact-form" style=" padding: 20px;">
+                    <p>
+                        <input type="text" placeholder="Your Name" required
+                            style="width: 100%; border: none; padding: 8px; font-family: Poppins; margin: 5px 0; border-radius: 15px;">
+                    </p>
+                    <p>
+                        <input type="email" placeholder="Your Email" required
+                            style="width: 100%; border: none; padding: 8px; font-family: Poppins; margin: 5px 0; border-radius: 15px;">
+                    </p>
+                    <p>
+                        <textarea placeholder="Your Message" rows="5" required
+                            style="width: 100%; border: none; padding: 8px; margin: 5px 0; font-family: Poppins; border-radius: 15px;"></textarea>
+                    </p>
+                    <p>
+                        <button type="submit"
+                            style="background-color: #42251e; color: #fcf0eb; font-family: Poppins; padding: 10px 20px; border: none; border-radius: 15px;">Send
+                            Message</button>
+                    </p>
+                </form>
+            </section>
+        </section>
+    </section>
+</body>
+
+</html>
